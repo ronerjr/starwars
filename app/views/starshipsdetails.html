@@ -1,0 +1,54 @@
+<md-dialog aria-label="Starship">
+  <form ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Starship Details</h2>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <table class="table">
+          <tr>
+            <th>Details</th>
+          </tr>
+          <tr><td align = "right">Name:</td><td>{{starship.name}}</td></tr>
+          <tr><td align = "right">Model:</td><td>{{starship.model}}</td></tr>
+  				<tr><td align = "right">Class:</td><td>{{starship.starship_class}}</td></tr>
+  				<tr><td align = "right">Manufacturer:</td><td>{{starship.manufacturer}}</td></tr>
+  				<tr><td align = "right">Cost:</td><td>{{starship.cost_in_credits}}</td></tr>
+  				<tr><td align = "right">Length:</td><td>{{starship.length}}</td></tr>
+  				<tr><td align = "right">Crew:</td><td>{{starship.crew}}</td></tr>
+  				<tr><td align = "right">Passengers:</td><td>{{starship.passengers}}</td></tr>
+  				<tr><td align = "right">Max Speed:</td><td>{{starship.max_atmosphering_speed}}</td></tr>
+  				<tr><td align = "right">Max Speed:</td><td>{{starship.hyperdrive_rating}}</td></tr>
+  				<tr><td align = "right">Megalights:</td><td>{{starship.MGLT}}</td></tr>
+  				<tr><td align = "right">Cargo Capacity:</td><td>{{starship.cargo_capacity}}</td></tr>
+          <tr><td align = "right">Consumables:</td><td>{{starship.consumables}}</td></tr>
+        </table>
+        <table class="table" ng-show='films.length > 0'>
+          <tr>
+            <th>Films</th>
+          </tr>
+          <tr ng-repeat="f in films | orderBy : 'episode_id'">
+            <td align = "left">{{"Eposide " + f.episode_id + " - " + f.title}}</td>
+          </tr>
+        </table>
+        <table class="table" ng-show='pilots.length > 0'>
+          <tr>
+            <th>Pilots</th>
+          </tr>
+          <tr ng-repeat="p in pilots | orderBy : 'name'">
+            <td align = "left">{{p.name}}</td>
+          </tr>
+        </table>
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <md-button ng-click="hide()">
+       Close
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

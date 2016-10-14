@@ -1,0 +1,34 @@
+<div class="jumbotron page header">
+	<h1>Species <small>All the {{resultSpecies.count}} star wars species</small></h1>
+
+<br>
+<table class="table table-striped table-hover">
+	<thead>
+		<tr class="table table-header">
+			<th>Name</th>
+			<th>Classification</th>
+			<th>Designation</th>
+			<th>Avg Height</th>
+			<th>Avg Lifespan</th>
+			<th>Eye Color</th>
+			<th>Hair Color</th>
+			<th>Skin Color</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="s in resultSpecies.results | orderBy : 'classification'" ng-click="">
+			<td>{{s.name}}</td>
+			<td>{{s.classification}}</td>
+			<td>{{s.designation}}</td>
+			<td>{{s.average_height}}</td>
+			<td>{{s.average_lifespan}}</td>
+			<td>{{s.eye_colors}}</td>
+			<td>{{s.hair_colors}}</td>
+			<td>{{s.skin_colors}}</td>
+		</tr>
+	</tbody>
+	<tfoot>
+
+	</tfoot>
+</table>
+</div>

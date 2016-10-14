@@ -1,0 +1,37 @@
+<div class="jumbotron">
+	<div class="header">
+		<h1>Planets <small>All the {{resultPlanets.count}} star wars planets</small></h1>
+	</div>
+	<br>
+	<div class="page table-responsive">
+		<table class="table table-striped table-hover" style="overflow-x: scroll !important" width="100%">
+			<thead>
+				<tr class="table table-header">
+					<th>Name</th>
+					<th>Diameter</th>
+					<th>Rotation Period</th>
+					<th>Orbital Period</th>
+					<th>Gravity</th>
+					<th>Population</th>
+					<th>Climate</th>
+					<th>Terrain</th>
+					<th>Surface Water</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="p in resultPlanets.results | orderBy : 'name'" ng-click="">
+					<td>{{p.name}}</td>
+					<td>{{p.diameter}}</td>
+					<td>{{p.rotation_period}}</td>
+					<td>{{p.orbital_period}}</td>
+					<td>{{p.gravity}}</td>
+					<td>{{p.population}}</td>
+					<td>{{p.climate}}</td>
+					<td>{{p.terrain}}</td>
+					<td>{{p.surface_water}}</td>
+			</tbody>
+			<tfoot>
+
+			</tfoot>
+		</table>
+</div>

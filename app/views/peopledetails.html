@@ -1,0 +1,64 @@
+<md-dialog aria-label="Person">
+  <form ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Starship Details</h2>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <table class="table">
+          <tr>
+            <th>Details</th>
+          </tr>
+          <tr><td align = "right">Name:</td><td>{{people.name}}</td></tr>
+          <tr><td align = "right">Birth Year:</td><td>{{people.birth_year}}</td></tr>
+  				<tr><td align = "right">Eye Color:</td><td>{{people.eye_color}}</td></tr>
+  				<tr><td align = "right">Gender:</td><td>{{people.gender}}</td></tr>
+  				<tr><td align = "right">Hair Color:</td><td>{{people.hair_color}}</td></tr>
+  				<tr><td align = "right">Skin Color:</td><td>{{people.skin_color}}</td></tr>
+          <tr><td align = "right">Homeworld:</td><td>{{planet.name}}</td></tr>
+        </table>
+        <table class="table" ng-show='films.length > 0'>
+          <tr>
+            <th>Films</th>
+          </tr>
+          <tr ng-repeat="f in films | orderBy : 'episode_id'">
+            <td align = "left">{{"Eposide " + f.episode_id + " - " + f.title}}</td>
+          </tr>
+        </table>
+        <table class="table" ng-show='species.length > 0'>
+          <tr>
+            <th>Species</th>
+          </tr>
+          <tr ng-repeat="s in species | orderBy : 'name'">
+            <td align = "left">{{s.name}}</td>
+          </tr>
+        </table>
+        <table class="table" ng-show='starships.length > 0'>
+          <tr>
+            <th>Starships</th>
+          </tr>
+          <tr ng-repeat="s in starships | orderBy : 'name'">
+            <td align = "left">{{s.name}}</td>
+          </tr>
+        </table>
+        <table class="table" ng-show='vehicles.length > 0'>
+          <tr>
+            <th>Vehicles</th>
+          </tr>
+          <tr ng-repeat="v in vehicles | orderBy : 'name'">
+            <td align = "left">{{v.name}}</td>
+          </tr>
+        </table>
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <md-button ng-click="hide()">
+       Close
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

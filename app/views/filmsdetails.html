@@ -1,0 +1,71 @@
+<md-dialog aria-label="Film">
+  <form ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Starship Details</h2>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <table class="table">
+          <tr>
+            <th>Details</th>
+          </tr>
+          <tr><td align = "right">Episode:</td><td>{{film.episode_id}}</td></tr>
+          <tr><td align = "right">Title:</td><td>{{film.title}}</td></tr>
+  				<tr><td align = "right">Opening Crawl:</td><td>{{film.opening_crawl}}</td></tr>
+  				<tr><td align = "right">Director:</td><td>{{film.director}}</td></tr>
+  				<tr><td align = "right">Producer:</td><td>{{film.producer}}</td></tr>
+  				<tr><td align = "right">Release:</td><td>{{film.release_date}}</td></tr>
+        </table>
+        <table class="table" ng-show='species.length > 0'>
+          <tr>
+            <th>Species</th>
+          </tr>
+          <tr ng-repeat="s in species | orderBy : 'name'">
+            <td align = "left">{{s.name}}</td>
+          </tr>
+        </table>
+        <table class="table" ng-show='starships.length > 0'>
+          <tr>
+            <th>Starships</th>
+          </tr>
+          <tr ng-repeat="s in starships | orderBy : 'name'">
+            <td align = "left">{{s.name}}</td>
+          </tr>
+        </table>
+        <table class="table" ng-show='vehicles.length > 0'>
+          <tr>
+            <th>Vehicles</th>
+          </tr>
+          <tr ng-repeat="v in vehicles | orderBy : 'name'">
+            <td align = "left">{{v.name}}</td>
+          </tr>
+        </table>
+        <table class="table" ng-show='characters.length > 0'>
+          <tr>
+            <th>Characters</th>
+          </tr>
+          <tr ng-repeat="c in characters | orderBy : 'name'">
+            <td align = "left">{{c.name}}</td>
+          </tr>
+        </table>
+        <table class="table" ng-show='planets.length > 0'>
+          <tr>
+            <th>Planets</th>
+          </tr>
+          <tr ng-repeat="p in planets | orderBy : 'name'">
+            <td align = "left">{{p.name}}</td>
+          </tr>
+        </table>
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <md-button ng-click="hide()">
+       Close
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

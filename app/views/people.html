@@ -1,0 +1,28 @@
+<div class="jumbotron">
+	<div class="header">
+		<h1>People <small>All the {{data.count}} star wars persons</small></h1>
+	</div>
+	<br>
+	<div class="page table-responsive">
+		<table class="table table-striped table-hover">
+			<thead>
+				<tr class="table table-header">
+					<th>Name</th>
+					<th>Gender</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="p in data.results" ng-click="showAdvanced(p.url)">
+					<td>{{p.name}}</td>
+					<td>{{p.gender}}</td>
+				</tr>
+			</tbody>
+		</table>
+		<center>
+			<div class="btn-group">
+				<button type="button" class="btn" ng-click="otherPage(data.previous)" ng-show="data.previous != null">< Previous</button>
+				<button type="button" class="btn" ng-click="otherPage(data.next)" ng-show="data.next != null">Next ></button>
+			</div>
+		</center>
+	</div>
+</div>
